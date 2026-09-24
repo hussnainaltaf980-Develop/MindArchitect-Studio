@@ -1,0 +1,60 @@
+# MindArchitect Studio: Enterprise GPU Container
+# Target Hardware: NVIDIA RTX A6000 / A100 / H100
+# Base Stack: CUDA 12.8 + cuDNN 9 + PyTorch 2.6 + vLLM 0.7.x
+# Powered by HussnainTechVertex Pvt Ltd
+
+FROM nvidia/cuda:12.8.0-devel-ubuntu22.04 AS builder
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9;9.0" \
+    CUDA_HOME=/usr/local/cuda
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.11 \
+    python3.11-dev \
+    python3.11-venv \
+    python3-pip \
+    git \
+    curl \
+    build-essential \
+    ninja-build \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1 && \
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
+WORKDIR /workspace
+
+# Install PyTorch and high-performance compilation dependencies
+RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip3 install --no-cache-dir \
+    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# Install frontier LLM training and serving suite
+RUN pip3 install --no-cache-dir \
+    transformers>=4.48.0 \
+    peft>=0.20.0 \
+    trl>=1.13.0 \
+    datasets>=3.0.0 \
+    accelerate>=1.0.0 \
+    bitsandbytes>=0.45.0 \
+    vllm>=0.7.0 \
+    fastapi>=0.115.0 \
+    uvicorn>=0.30.0 \
+    asyncpg>=0.30.0 \
+    redis>=5.0.0 \
+    pydantic>=2.10.0
+
+# Install FlashAttention-2 (optional pre-built wheel or compiled)
+RUN pip3 install --no-cache-dir flash-attn --no-build-isolation || true
+
+# Copy workspace
+COPY . /workspace/
+
+# Expose ports for API and vLLM
+EXPOSE 8000 8001
+
+# Default entrypoint supports both training invocation and inference serving
+ENTRYPOINT ["/bin/bash", "/workspace/infra/deploy_gpu.sh"]

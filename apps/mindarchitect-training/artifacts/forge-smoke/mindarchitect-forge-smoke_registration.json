@@ -1,0 +1,8 @@
+{
+  "model_id": "mindarchitect-forge-smoke",
+  "checkpoint_path": "/working_dir/c_b8753ce5d6140fea/mindarchitect/apps/mindarchitect-training/artifacts/forge-smoke/smoke_weights.npz",
+  "status": "DEVELOPMENT_ONLY",
+  "parameter_scale": "19.2M",
+  "registered_at": "NOW()",
+  "sql_dml": "INSERT INTO model_registry (\n        model_id,\n        display_name,\n        series,\n        version,\n        competitor_target,\n        specialization,\n        status,\n        parameter_scale,\n        checkpoint_path,\n        updated_at\n    ) VALUES (\n        'mindarchitect-forge-smoke',\n        'Mindarchitect Forge Smoke',\n        'Development',\n        '5.6',\n        'Autonomous Flagship Workload',\n        'Registered model weights checkpoint',\n        'DEVELOPMENT_ONLY',\n        '19.2M',\n        '/working_dir/c_b8753ce5d6140fea/mindarchitect/apps/mindarchitect-training/artifacts/forge-smoke/smoke_weights.npz',\n        NOW()\n    )\n    ON CONFLICT (model_id) DO UPDATE SET\n        status = EXCLUDED.status,\n        checkpoint_path = EXCLUDED.checkpoint_path,\n        parameter_scale = COALESCE(EXCLUDED.parameter_scale, model_registry.parameter_scale),\n        updated_at = NOW();"
+}
