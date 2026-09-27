@@ -1,0 +1,13 @@
+{
+  "name": "@mindarchitect/training-service",
+  "private": true,
+  "type": "module",
+  "description": "MindArchitect training + tokenizer service. Node only where the stack needs it (PGlite registry integration tests).",
+  "scripts": {
+    "test:integration": "python3 -m pytest tests/integration -q",
+    "registry:smoke": "node scripts/integration/pglite_registry.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.4"
+  }
+}
