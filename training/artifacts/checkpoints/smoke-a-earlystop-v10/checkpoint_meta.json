@@ -1,0 +1,95 @@
+{
+  "run": "forge_smoke_longctx_a-earlystop-v10",
+  "tag": "a-earlystop-v10",
+  "tokenizer": "bpe",
+  "seed": 1337,
+  "seq_len": 512,
+  "cfg_max_seq_len": 512,
+  "requested_steps": 600,
+  "completed_steps": 70,
+  "early_stopped": true,
+  "best_val_step": 30,
+  "best_val_loss": 7.6607,
+  "best_state_restored": true,
+  "initial_loss": 8.895,
+  "final_loss": 6.3011,
+  "val_loss": 7.6607,
+  "test_loss": 6.5544,
+  "test_ppl": 702.3477,
+  "loss_delta": -2.5939,
+  "loss_delta_convention": "final_loss - initial_loss; negative means improvement",
+  "random_floor_nats": 8.8774,
+  "random_floor_definition": "ln(vocab_size) = ln(7168)",
+  "tokenizer_effective_floor_nats": 8.8588,
+  "tokenizer_effective_floor_definition": "ln(reachable ids) = ln(7036) \u2014 the floor this tokenizer actually imposes",
+  "batch_size": 1,
+  "grad_accum": 4,
+  "effective_batch": 4,
+  "lr": 0.003,
+  "min_lr": 0.0003,
+  "final_lr": 0.00295273,
+  "elapsed_s": 54.64,
+  "vocab_size": 7168,
+  "param_count": 1003840,
+  "tensor_count": 21,
+  "splits": {
+    "train": {
+      "n": 3741,
+      "raw_tokens_min": 50,
+      "raw_tokens_max": 417,
+      "raw_tokens_mean": 172.6,
+      "truncated": 0,
+      "truncated_pct": 0.0
+    },
+    "validation": {
+      "n": 514,
+      "raw_tokens_min": 104,
+      "raw_tokens_max": 453,
+      "raw_tokens_mean": 212.5,
+      "truncated": 0,
+      "truncated_pct": 0.0
+    },
+    "test": {
+      "n": 407,
+      "raw_tokens_min": 85,
+      "raw_tokens_max": 278,
+      "raw_tokens_mean": 190.6,
+      "truncated": 0,
+      "truncated_pct": 0.0
+    }
+  },
+  "val_history": [
+    {
+      "step": 1,
+      "val_loss": 8.8559
+    },
+    {
+      "step": 10,
+      "val_loss": 8.6617
+    },
+    {
+      "step": 20,
+      "val_loss": 7.9194
+    },
+    {
+      "step": 30,
+      "val_loss": 7.6607
+    },
+    {
+      "step": 40,
+      "val_loss": 7.6705
+    },
+    {
+      "step": 50,
+      "val_loss": 7.8488
+    },
+    {
+      "step": 60,
+      "val_loss": 7.7954
+    },
+    {
+      "step": 70,
+      "val_loss": 7.8229
+    }
+  ]
+}
