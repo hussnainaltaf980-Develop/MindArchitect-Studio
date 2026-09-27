@@ -1,0 +1,1229 @@
+{
+  "corpus": "mindarchitect-v3",
+  "seed": "mindarchitect-v3",
+  "scale": 1.0,
+  "v2_scale": 1.0,
+  "derivation": "v2 families (weights scaled) + 40 new v3 families, one registry",
+  "families_total": 86,
+  "families_inherited": 44,
+  "families_v3": 42,
+  "families_per_category": {
+    "code": 29,
+    "explanation": 13,
+    "multistep": 14,
+    "reasoning": 18,
+    "refusal": 12
+  },
+  "examples_total": 4662,
+  "splits": {
+    "train": 3741,
+    "validation": 514,
+    "test": 407
+  },
+  "categories": {
+    "code": 1246,
+    "explanation": 702,
+    "multistep": 819,
+    "reasoning": 1220,
+    "refusal": 675
+  },
+  "families_at_template_ceiling": [
+    {
+      "family": "code_topk_heap",
+      "category": "code",
+      "target": 85,
+      "produced": 24,
+      "duplicates_skipped": 61
+    },
+    {
+      "family": "code_config_merge",
+      "category": "code",
+      "target": 85,
+      "produced": 24,
+      "duplicates_skipped": 61
+    },
+    {
+      "family": "code_sliding_window",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60
+    },
+    {
+      "family": "code_url_parse",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60
+    },
+    {
+      "family": "code_matrix",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60
+    },
+    {
+      "family": "code_levenshtein",
+      "category": "code",
+      "target": 85,
+      "produced": 44,
+      "duplicates_skipped": 41
+    },
+    {
+      "family": "code_csv_to_json",
+      "category": "code",
+      "target": 85,
+      "produced": 52,
+      "duplicates_skipped": 33
+    },
+    {
+      "family": "code_parse_duration",
+      "category": "code",
+      "target": 50,
+      "produced": 22,
+      "duplicates_skipped": 28
+    },
+    {
+      "family": "code_binary_search",
+      "category": "code",
+      "target": 45,
+      "produced": 20,
+      "duplicates_skipped": 25
+    },
+    {
+      "family": "code_stream_sse",
+      "category": "code",
+      "target": 40,
+      "produced": 20,
+      "duplicates_skipped": 20
+    },
+    {
+      "family": "code_diff_text",
+      "category": "code",
+      "target": 40,
+      "produced": 21,
+      "duplicates_skipped": 19
+    },
+    {
+      "family": "exp_numeric_precision",
+      "category": "explanation",
+      "target": 80,
+      "produced": 63,
+      "duplicates_skipped": 17
+    },
+    {
+      "family": "reason_speed_distance",
+      "category": "reasoning",
+      "target": 85,
+      "produced": 69,
+      "duplicates_skipped": 0
+    },
+    {
+      "family": "exp_cache_strategy",
+      "category": "explanation",
+      "target": 80,
+      "produced": 65,
+      "duplicates_skipped": 15
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 85,
+      "produced": 71,
+      "duplicates_skipped": 14
+    },
+    {
+      "family": "code_config_loader",
+      "category": "code",
+      "target": 45,
+      "produced": 32,
+      "duplicates_skipped": 13
+    },
+    {
+      "family": "reason_work_rate",
+      "category": "reasoning",
+      "target": 95,
+      "produced": 82,
+      "duplicates_skipped": 0
+    },
+    {
+      "family": "step_db_migration_plan",
+      "category": "multistep",
+      "target": 90,
+      "produced": 77,
+      "duplicates_skipped": 13
+    },
+    {
+      "family": "code_scrub_secrets",
+      "category": "code",
+      "target": 50,
+      "produced": 38,
+      "duplicates_skipped": 12
+    },
+    {
+      "family": "step_security_review",
+      "category": "multistep",
+      "target": 80,
+      "produced": 68,
+      "duplicates_skipped": 12
+    },
+    {
+      "family": "exp_observability",
+      "category": "explanation",
+      "target": 80,
+      "produced": 68,
+      "duplicates_skipped": 12
+    },
+    {
+      "family": "code_safe_divide",
+      "category": "code",
+      "target": 45,
+      "produced": 34,
+      "duplicates_skipped": 11
+    },
+    {
+      "family": "code_flatten_json",
+      "category": "code",
+      "target": 45,
+      "produced": 34,
+      "duplicates_skipped": 11
+    },
+    {
+      "family": "exp_http_semantics",
+      "category": "explanation",
+      "target": 80,
+      "produced": 69,
+      "duplicates_skipped": 11
+    },
+    {
+      "family": "ref_stale_knowledge",
+      "category": "refusal",
+      "target": 80,
+      "produced": 69,
+      "duplicates_skipped": 11
+    },
+    {
+      "family": "code_merge_intervals",
+      "category": "code",
+      "target": 50,
+      "produced": 40,
+      "duplicates_skipped": 10
+    },
+    {
+      "family": "exp_model_limits",
+      "category": "explanation",
+      "target": 35,
+      "produced": 25,
+      "duplicates_skipped": 10
+    },
+    {
+      "family": "ref_financial_prediction",
+      "category": "refusal",
+      "target": 80,
+      "produced": 70,
+      "duplicates_skipped": 10
+    },
+    {
+      "family": "step_experiment_design",
+      "category": "multistep",
+      "target": 40,
+      "produced": 31,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "step_incident_triage",
+      "category": "multistep",
+      "target": 85,
+      "produced": 76,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "exp_index_types",
+      "category": "explanation",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "ref_medical_advice",
+      "category": "refusal",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "ref_ambiguous_scope",
+      "category": "refusal",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "code_pagination",
+      "category": "code",
+      "target": 45,
+      "produced": 37,
+      "duplicates_skipped": 8
+    },
+    {
+      "family": "exp_cap_theorem",
+      "category": "explanation",
+      "target": 80,
+      "produced": 72,
+      "duplicates_skipped": 8
+    },
+    {
+      "family": "ref_no_access",
+      "category": "refusal",
+      "target": 80,
+      "produced": 72,
+      "duplicates_skipped": 8
+    },
+    {
+      "family": "code_lru_cache",
+      "category": "code",
+      "target": 50,
+      "produced": 43,
+      "duplicates_skipped": 7
+    },
+    {
+      "family": "code_retry_jitter",
+      "category": "code",
+      "target": 85,
+      "produced": 78,
+      "duplicates_skipped": 7
+    },
+    {
+      "family": "ref_legal_advice",
+      "category": "refusal",
+      "target": 80,
+      "produced": 73,
+      "duplicates_skipped": 7
+    },
+    {
+      "family": "ref_incomplete_spec",
+      "category": "refusal",
+      "target": 80,
+      "produced": 73,
+      "duplicates_skipped": 7
+    },
+    {
+      "family": "exp_queue_semantics",
+      "category": "explanation",
+      "target": 80,
+      "produced": 74,
+      "duplicates_skipped": 6
+    },
+    {
+      "family": "step_debug_workflow",
+      "category": "multistep",
+      "target": 45,
+      "produced": 40,
+      "duplicates_skipped": 5
+    },
+    {
+      "family": "code_rate_limiter",
+      "category": "code",
+      "target": 50,
+      "produced": 46,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "code_rolling_stats",
+      "category": "code",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "ref_unsafe",
+      "category": "refusal",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "reason_syllogism",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 52,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "step_incident_response",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "exp_concept",
+      "category": "explanation",
+      "target": 45,
+      "produced": 42,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "exp_compare",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "ref_out_of_scope",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "ref_cannot_verify",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "step_release_plan",
+      "category": "multistep",
+      "target": 45,
+      "produced": 43,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "code_chunked_iter",
+      "category": "code",
+      "target": 50,
+      "produced": 48,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "exp_mechanism",
+      "category": "explanation",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "exp_diagnosis",
+      "category": "explanation",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "ref_ambiguous",
+      "category": "refusal",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "ref_missing_info",
+      "category": "refusal",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "code_cron_parse",
+      "category": "code",
+      "target": 80,
+      "produced": 78,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "reason_sequence_next",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 54,
+      "duplicates_skipped": 1
+    },
+    {
+      "family": "step_data_pipeline",
+      "category": "multistep",
+      "target": 40,
+      "produced": 39,
+      "duplicates_skipped": 1
+    },
+    {
+      "family": "step_migration",
+      "category": "multistep",
+      "target": 40,
+      "produced": 39,
+      "duplicates_skipped": 1
+    },
+    {
+      "family": "reason_probability",
+      "category": "reasoning",
+      "target": 90,
+      "produced": 89,
+      "duplicates_skipped": 1
+    },
+    {
+      "family": "reason_graph_paths",
+      "category": "reasoning",
+      "target": 80,
+      "produced": 79,
+      "duplicates_skipped": 1
+    }
+  ],
+  "families_with_headroom": 22,
+  "per_family": [
+    {
+      "family": "reason_arithmetic_word",
+      "category": "reasoning",
+      "target": 60,
+      "produced": 60,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_percentage",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 55,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_unit_conversion",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_syllogism",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 52,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "reason_sequence_next",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 54,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "reason_ordering",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_rate_time",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_modular",
+      "category": "reasoning",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_average",
+      "category": "reasoning",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "step_release_plan",
+      "category": "multistep",
+      "target": 45,
+      "produced": 43,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "step_debug_workflow",
+      "category": "multistep",
+      "target": 45,
+      "produced": 40,
+      "duplicates_skipped": 5,
+      "shortfall": 5
+    },
+    {
+      "family": "step_data_pipeline",
+      "category": "multistep",
+      "target": 40,
+      "produced": 39,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "step_incident_response",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "step_migration",
+      "category": "multistep",
+      "target": 40,
+      "produced": 39,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "step_experiment_design",
+      "category": "multistep",
+      "target": 40,
+      "produced": 31,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "code_retry_backoff",
+      "category": "code",
+      "target": 55,
+      "produced": 55,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_chunked_iter",
+      "category": "code",
+      "target": 50,
+      "produced": 48,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "code_lru_cache",
+      "category": "code",
+      "target": 50,
+      "produced": 43,
+      "duplicates_skipped": 7,
+      "shortfall": 7
+    },
+    {
+      "family": "code_rate_limiter",
+      "category": "code",
+      "target": 50,
+      "produced": 46,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "code_merge_intervals",
+      "category": "code",
+      "target": 50,
+      "produced": 40,
+      "duplicates_skipped": 10,
+      "shortfall": 10
+    },
+    {
+      "family": "code_parse_duration",
+      "category": "code",
+      "target": 50,
+      "produced": 22,
+      "duplicates_skipped": 28,
+      "shortfall": 28
+    },
+    {
+      "family": "code_scrub_secrets",
+      "category": "code",
+      "target": 50,
+      "produced": 38,
+      "duplicates_skipped": 12,
+      "shortfall": 12
+    },
+    {
+      "family": "code_safe_divide",
+      "category": "code",
+      "target": 45,
+      "produced": 34,
+      "duplicates_skipped": 11,
+      "shortfall": 11
+    },
+    {
+      "family": "code_flatten_json",
+      "category": "code",
+      "target": 45,
+      "produced": 34,
+      "duplicates_skipped": 11,
+      "shortfall": 11
+    },
+    {
+      "family": "code_pagination",
+      "category": "code",
+      "target": 45,
+      "produced": 37,
+      "duplicates_skipped": 8,
+      "shortfall": 8
+    },
+    {
+      "family": "code_topological_sort",
+      "category": "code",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_binary_search",
+      "category": "code",
+      "target": 45,
+      "produced": 20,
+      "duplicates_skipped": 25,
+      "shortfall": 25
+    },
+    {
+      "family": "code_config_loader",
+      "category": "code",
+      "target": 45,
+      "produced": 32,
+      "duplicates_skipped": 13,
+      "shortfall": 13
+    },
+    {
+      "family": "code_rolling_stats",
+      "category": "code",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "code_validate_input",
+      "category": "code",
+      "target": 40,
+      "produced": 40,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_stream_sse",
+      "category": "code",
+      "target": 40,
+      "produced": 20,
+      "duplicates_skipped": 20,
+      "shortfall": 20
+    },
+    {
+      "family": "code_diff_text",
+      "category": "code",
+      "target": 40,
+      "produced": 21,
+      "duplicates_skipped": 19,
+      "shortfall": 19
+    },
+    {
+      "family": "exp_concept",
+      "category": "explanation",
+      "target": 45,
+      "produced": 42,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "exp_compare",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "exp_tradeoff",
+      "category": "explanation",
+      "target": 40,
+      "produced": 40,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "exp_mechanism",
+      "category": "explanation",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "exp_diagnosis",
+      "category": "explanation",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "exp_model_limits",
+      "category": "explanation",
+      "target": 35,
+      "produced": 25,
+      "duplicates_skipped": 10,
+      "shortfall": 10
+    },
+    {
+      "family": "ref_unsafe",
+      "category": "refusal",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "ref_ambiguous",
+      "category": "refusal",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "ref_missing_info",
+      "category": "refusal",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "ref_out_of_scope",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "ref_cannot_verify",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "reason_work_rate",
+      "category": "reasoning",
+      "target": 95,
+      "produced": 82,
+      "duplicates_skipped": 0,
+      "shortfall": 13
+    },
+    {
+      "family": "reason_mixture",
+      "category": "reasoning",
+      "target": 90,
+      "produced": 90,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_probability",
+      "category": "reasoning",
+      "target": 90,
+      "produced": 89,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "reason_interest",
+      "category": "reasoning",
+      "target": 90,
+      "produced": 90,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_geometry",
+      "category": "reasoning",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_speed_distance",
+      "category": "reasoning",
+      "target": 85,
+      "produced": 69,
+      "duplicates_skipped": 0,
+      "shortfall": 16
+    },
+    {
+      "family": "reason_bit_math",
+      "category": "reasoning",
+      "target": 90,
+      "produced": 90,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_date_math",
+      "category": "reasoning",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_graph_paths",
+      "category": "reasoning",
+      "target": 80,
+      "produced": 79,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "step_ci_pipeline",
+      "category": "multistep",
+      "target": 90,
+      "produced": 90,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "step_db_migration_plan",
+      "category": "multistep",
+      "target": 90,
+      "produced": 77,
+      "duplicates_skipped": 13,
+      "shortfall": 13
+    },
+    {
+      "family": "step_incident_triage",
+      "category": "multistep",
+      "target": 85,
+      "produced": 76,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "step_capacity_plan",
+      "category": "multistep",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 85,
+      "produced": 71,
+      "duplicates_skipped": 14,
+      "shortfall": 14
+    },
+    {
+      "family": "step_data_backfill",
+      "category": "multistep",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "step_security_review",
+      "category": "multistep",
+      "target": 80,
+      "produced": 68,
+      "duplicates_skipped": 12,
+      "shortfall": 12
+    },
+    {
+      "family": "code_json_validate",
+      "category": "code",
+      "target": 90,
+      "produced": 90,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_csv_to_json",
+      "category": "code",
+      "target": 85,
+      "produced": 52,
+      "duplicates_skipped": 33,
+      "shortfall": 33
+    },
+    {
+      "family": "code_retry_jitter",
+      "category": "code",
+      "target": 85,
+      "produced": 78,
+      "duplicates_skipped": 7,
+      "shortfall": 7
+    },
+    {
+      "family": "code_sliding_window",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60,
+      "shortfall": 60
+    },
+    {
+      "family": "code_levenshtein",
+      "category": "code",
+      "target": 85,
+      "produced": 44,
+      "duplicates_skipped": 41,
+      "shortfall": 41
+    },
+    {
+      "family": "code_topk_heap",
+      "category": "code",
+      "target": 85,
+      "produced": 24,
+      "duplicates_skipped": 61,
+      "shortfall": 61
+    },
+    {
+      "family": "code_url_parse",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60,
+      "shortfall": 60
+    },
+    {
+      "family": "code_roman",
+      "category": "code",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_matrix",
+      "category": "code",
+      "target": 85,
+      "produced": 25,
+      "duplicates_skipped": 60,
+      "shortfall": 60
+    },
+    {
+      "family": "code_word_wrap",
+      "category": "code",
+      "target": 85,
+      "produced": 85,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_config_merge",
+      "category": "code",
+      "target": 85,
+      "produced": 24,
+      "duplicates_skipped": 61,
+      "shortfall": 61
+    },
+    {
+      "family": "code_cron_parse",
+      "category": "code",
+      "target": 80,
+      "produced": 78,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "exp_cap_theorem",
+      "category": "explanation",
+      "target": 80,
+      "produced": 72,
+      "duplicates_skipped": 8,
+      "shortfall": 8
+    },
+    {
+      "family": "exp_index_types",
+      "category": "explanation",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "exp_cache_strategy",
+      "category": "explanation",
+      "target": 80,
+      "produced": 65,
+      "duplicates_skipped": 15,
+      "shortfall": 15
+    },
+    {
+      "family": "exp_queue_semantics",
+      "category": "explanation",
+      "target": 80,
+      "produced": 74,
+      "duplicates_skipped": 6,
+      "shortfall": 6
+    },
+    {
+      "family": "exp_http_semantics",
+      "category": "explanation",
+      "target": 80,
+      "produced": 69,
+      "duplicates_skipped": 11,
+      "shortfall": 11
+    },
+    {
+      "family": "exp_numeric_precision",
+      "category": "explanation",
+      "target": 80,
+      "produced": 63,
+      "duplicates_skipped": 17,
+      "shortfall": 17
+    },
+    {
+      "family": "exp_observability",
+      "category": "explanation",
+      "target": 80,
+      "produced": 68,
+      "duplicates_skipped": 12,
+      "shortfall": 12
+    },
+    {
+      "family": "ref_legal_advice",
+      "category": "refusal",
+      "target": 80,
+      "produced": 73,
+      "duplicates_skipped": 7,
+      "shortfall": 7
+    },
+    {
+      "family": "ref_medical_advice",
+      "category": "refusal",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "ref_financial_prediction",
+      "category": "refusal",
+      "target": 80,
+      "produced": 70,
+      "duplicates_skipped": 10,
+      "shortfall": 10
+    },
+    {
+      "family": "ref_stale_knowledge",
+      "category": "refusal",
+      "target": 80,
+      "produced": 69,
+      "duplicates_skipped": 11,
+      "shortfall": 11
+    },
+    {
+      "family": "ref_incomplete_spec",
+      "category": "refusal",
+      "target": 80,
+      "produced": 73,
+      "duplicates_skipped": 7,
+      "shortfall": 7
+    },
+    {
+      "family": "ref_no_access",
+      "category": "refusal",
+      "target": 80,
+      "produced": 72,
+      "duplicates_skipped": 8,
+      "shortfall": 8
+    },
+    {
+      "family": "ref_ambiguous_scope",
+      "category": "refusal",
+      "target": 80,
+      "produced": 71,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    }
+  ],
+  "split_policy": "families assigned within each category: smallest ~10% of families per category to test, next ~12% to validation, rest to train; whole families move together so no template is shared across splits",
+  "split_by_category": {
+    "code": {
+      "train": 1003,
+      "validation": 88,
+      "test": 155
+    },
+    "explanation": {
+      "train": 534,
+      "validation": 94,
+      "test": 74
+    },
+    "multistep": {
+      "train": 659,
+      "validation": 121,
+      "test": 39
+    },
+    "reasoning": {
+      "train": 974,
+      "validation": 139,
+      "test": 107
+    },
+    "refusal": {
+      "train": 571,
+      "validation": 72,
+      "test": 32
+    }
+  },
+  "leak_check": {
+    "families_per_split": {
+      "train": 67,
+      "validation": 10,
+      "test": 8
+    },
+    "family_overlap_across_splits": {},
+    "exact_instruction_overlap": {
+      "train~validation": [],
+      "train~test": [],
+      "validation~test": []
+    },
+    "normalised_instruction_overlap": {
+      "train~validation": [],
+      "train~test": [],
+      "validation~test": []
+    },
+    "within_split_normalised_collisions": {
+      "train": 882,
+      "validation": 148,
+      "test": 97
+    },
+    "within_split_duplicate_examples": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "duplicate_example_note": "counts identical (instruction, response) pairs within a split; normalised collisions are expected for templated families and are structural, not leakage",
+    "clean": true
+  }
+}

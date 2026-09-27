@@ -1,0 +1,666 @@
+{
+  "corpus": "mindarchitect-v2",
+  "seed": "mindarchitect-v2",
+  "scale": 1.0,
+  "families_total": 44,
+  "examples_total": 1736,
+  "splits": {
+    "train": 1261,
+    "validation": 262,
+    "test": 213
+  },
+  "splits_note": "counts re-derived after deduplication, matching the files on disk",
+  "categories": {
+    "code": 624,
+    "explanation": 223,
+    "multistep": 257,
+    "reasoning": 462,
+    "refusal": 170
+  },
+  "template_ceiling_note": "A family's distinct prompts are bounded by its own template count, so produced < target means the family ran out of distinct rows, not that generation failed. Reported rather than padded.",
+  "families_at_template_ceiling": [
+    {
+      "family": "code_parse_duration",
+      "category": "code",
+      "target": 50,
+      "produced": 22,
+      "duplicates_skipped": 28
+    },
+    {
+      "family": "code_binary_search",
+      "category": "code",
+      "target": 45,
+      "produced": 20,
+      "duplicates_skipped": 25
+    },
+    {
+      "family": "code_stream_sse",
+      "category": "code",
+      "target": 40,
+      "produced": 21,
+      "duplicates_skipped": 19
+    },
+    {
+      "family": "code_diff_text",
+      "category": "code",
+      "target": 40,
+      "produced": 22,
+      "duplicates_skipped": 18
+    },
+    {
+      "family": "code_scrub_secrets",
+      "category": "code",
+      "target": 50,
+      "produced": 34,
+      "duplicates_skipped": 16
+    },
+    {
+      "family": "code_flatten_json",
+      "category": "code",
+      "target": 45,
+      "produced": 33,
+      "duplicates_skipped": 12
+    },
+    {
+      "family": "code_lru_cache",
+      "category": "code",
+      "target": 50,
+      "produced": 41,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "code_config_loader",
+      "category": "code",
+      "target": 45,
+      "produced": 36,
+      "duplicates_skipped": 9
+    },
+    {
+      "family": "step_experiment_design",
+      "category": "multistep",
+      "target": 40,
+      "produced": 32,
+      "duplicates_skipped": 8
+    },
+    {
+      "family": "exp_model_limits",
+      "category": "explanation",
+      "target": 35,
+      "produced": 28,
+      "duplicates_skipped": 7
+    },
+    {
+      "family": "step_debug_workflow",
+      "category": "multistep",
+      "target": 45,
+      "produced": 39,
+      "duplicates_skipped": 6
+    },
+    {
+      "family": "code_merge_intervals",
+      "category": "code",
+      "target": 50,
+      "produced": 44,
+      "duplicates_skipped": 6
+    },
+    {
+      "family": "code_safe_divide",
+      "category": "code",
+      "target": 45,
+      "produced": 39,
+      "duplicates_skipped": 6
+    },
+    {
+      "family": "ref_unsafe",
+      "category": "refusal",
+      "target": 40,
+      "produced": 34,
+      "duplicates_skipped": 6
+    },
+    {
+      "family": "step_data_pipeline",
+      "category": "multistep",
+      "target": 40,
+      "produced": 35,
+      "duplicates_skipped": 5
+    },
+    {
+      "family": "code_pagination",
+      "category": "code",
+      "target": 45,
+      "produced": 40,
+      "duplicates_skipped": 5
+    },
+    {
+      "family": "ref_missing_info",
+      "category": "refusal",
+      "target": 40,
+      "produced": 35,
+      "duplicates_skipped": 5
+    },
+    {
+      "family": "step_release_plan",
+      "category": "multistep",
+      "target": 45,
+      "produced": 41,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "step_incident_response",
+      "category": "multistep",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "code_rolling_stats",
+      "category": "code",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4
+    },
+    {
+      "family": "step_migration",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "exp_compare",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "exp_mechanism",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "exp_diagnosis",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "ref_ambiguous",
+      "category": "refusal",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "ref_out_of_scope",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "ref_cannot_verify",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3
+    },
+    {
+      "family": "reason_sequence_next",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 53,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "code_chunked_iter",
+      "category": "code",
+      "target": 50,
+      "produced": 48,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "code_validate_input",
+      "category": "code",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2
+    },
+    {
+      "family": "reason_syllogism",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 54,
+      "duplicates_skipped": 1
+    },
+    {
+      "family": "exp_concept",
+      "category": "explanation",
+      "target": 45,
+      "produced": 44,
+      "duplicates_skipped": 1
+    }
+  ],
+  "per_family": [
+    {
+      "family": "reason_arithmetic_word",
+      "category": "reasoning",
+      "target": 60,
+      "produced": 60,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_percentage",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 55,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_unit_conversion",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_syllogism",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 54,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "reason_sequence_next",
+      "category": "reasoning",
+      "target": 55,
+      "produced": 53,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "reason_ordering",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_rate_time",
+      "category": "reasoning",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_modular",
+      "category": "reasoning",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "reason_average",
+      "category": "reasoning",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "step_release_plan",
+      "category": "multistep",
+      "target": 45,
+      "produced": 41,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "step_debug_workflow",
+      "category": "multistep",
+      "target": 45,
+      "produced": 39,
+      "duplicates_skipped": 6,
+      "shortfall": 6
+    },
+    {
+      "family": "step_data_pipeline",
+      "category": "multistep",
+      "target": 40,
+      "produced": 35,
+      "duplicates_skipped": 5,
+      "shortfall": 5
+    },
+    {
+      "family": "step_incident_response",
+      "category": "multistep",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "step_migration",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "step_perf_investigation",
+      "category": "multistep",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "step_experiment_design",
+      "category": "multistep",
+      "target": 40,
+      "produced": 32,
+      "duplicates_skipped": 8,
+      "shortfall": 8
+    },
+    {
+      "family": "code_retry_backoff",
+      "category": "code",
+      "target": 55,
+      "produced": 55,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_chunked_iter",
+      "category": "code",
+      "target": 50,
+      "produced": 48,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "code_lru_cache",
+      "category": "code",
+      "target": 50,
+      "produced": 41,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "code_rate_limiter",
+      "category": "code",
+      "target": 50,
+      "produced": 50,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_merge_intervals",
+      "category": "code",
+      "target": 50,
+      "produced": 44,
+      "duplicates_skipped": 6,
+      "shortfall": 6
+    },
+    {
+      "family": "code_parse_duration",
+      "category": "code",
+      "target": 50,
+      "produced": 22,
+      "duplicates_skipped": 28,
+      "shortfall": 28
+    },
+    {
+      "family": "code_scrub_secrets",
+      "category": "code",
+      "target": 50,
+      "produced": 34,
+      "duplicates_skipped": 16,
+      "shortfall": 16
+    },
+    {
+      "family": "code_safe_divide",
+      "category": "code",
+      "target": 45,
+      "produced": 39,
+      "duplicates_skipped": 6,
+      "shortfall": 6
+    },
+    {
+      "family": "code_flatten_json",
+      "category": "code",
+      "target": 45,
+      "produced": 33,
+      "duplicates_skipped": 12,
+      "shortfall": 12
+    },
+    {
+      "family": "code_pagination",
+      "category": "code",
+      "target": 45,
+      "produced": 40,
+      "duplicates_skipped": 5,
+      "shortfall": 5
+    },
+    {
+      "family": "code_topological_sort",
+      "category": "code",
+      "target": 45,
+      "produced": 45,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "code_binary_search",
+      "category": "code",
+      "target": 45,
+      "produced": 20,
+      "duplicates_skipped": 25,
+      "shortfall": 25
+    },
+    {
+      "family": "code_config_loader",
+      "category": "code",
+      "target": 45,
+      "produced": 36,
+      "duplicates_skipped": 9,
+      "shortfall": 9
+    },
+    {
+      "family": "code_rolling_stats",
+      "category": "code",
+      "target": 40,
+      "produced": 36,
+      "duplicates_skipped": 4,
+      "shortfall": 4
+    },
+    {
+      "family": "code_validate_input",
+      "category": "code",
+      "target": 40,
+      "produced": 38,
+      "duplicates_skipped": 2,
+      "shortfall": 2
+    },
+    {
+      "family": "code_stream_sse",
+      "category": "code",
+      "target": 40,
+      "produced": 21,
+      "duplicates_skipped": 19,
+      "shortfall": 19
+    },
+    {
+      "family": "code_diff_text",
+      "category": "code",
+      "target": 40,
+      "produced": 22,
+      "duplicates_skipped": 18,
+      "shortfall": 18
+    },
+    {
+      "family": "exp_concept",
+      "category": "explanation",
+      "target": 45,
+      "produced": 44,
+      "duplicates_skipped": 1,
+      "shortfall": 1
+    },
+    {
+      "family": "exp_compare",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "exp_tradeoff",
+      "category": "explanation",
+      "target": 40,
+      "produced": 40,
+      "duplicates_skipped": 0,
+      "shortfall": 0
+    },
+    {
+      "family": "exp_mechanism",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "exp_diagnosis",
+      "category": "explanation",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "exp_model_limits",
+      "category": "explanation",
+      "target": 35,
+      "produced": 28,
+      "duplicates_skipped": 7,
+      "shortfall": 7
+    },
+    {
+      "family": "ref_unsafe",
+      "category": "refusal",
+      "target": 40,
+      "produced": 34,
+      "duplicates_skipped": 6,
+      "shortfall": 6
+    },
+    {
+      "family": "ref_ambiguous",
+      "category": "refusal",
+      "target": 40,
+      "produced": 37,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "ref_missing_info",
+      "category": "refusal",
+      "target": 40,
+      "produced": 35,
+      "duplicates_skipped": 5,
+      "shortfall": 5
+    },
+    {
+      "family": "ref_out_of_scope",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    },
+    {
+      "family": "ref_cannot_verify",
+      "category": "refusal",
+      "target": 35,
+      "produced": 32,
+      "duplicates_skipped": 3,
+      "shortfall": 3
+    }
+  ],
+  "split_policy": "families assigned within each category: smallest ~10% of families per category to test, next ~12% to validation, rest to train; whole families move together so no template is shared across splits",
+  "split_by_category": {
+    "code": {
+      "train": 463,
+      "validation": 98,
+      "test": 63
+    },
+    "explanation": {
+      "train": 151,
+      "validation": 44,
+      "test": 28
+    },
+    "multistep": {
+      "train": 190,
+      "validation": 32,
+      "test": 35
+    },
+    "reasoning": {
+      "train": 353,
+      "validation": 54,
+      "test": 55
+    },
+    "refusal": {
+      "train": 104,
+      "validation": 34,
+      "test": 32
+    }
+  },
+  "leak_check": {
+    "families_per_split": {
+      "train": 32,
+      "validation": 6,
+      "test": 6
+    },
+    "family_overlap_across_splits": {},
+    "exact_instruction_overlap": {
+      "train~validation": [],
+      "train~test": [],
+      "validation~test": []
+    },
+    "normalised_instruction_overlap": {
+      "train~validation": [],
+      "train~test": [],
+      "validation~test": []
+    },
+    "within_split_normalised_collisions": {
+      "train": 187,
+      "validation": 57,
+      "test": 53
+    },
+    "within_split_duplicate_examples": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "duplicate_example_note": "counts identical (instruction, response) pairs within a split; normalised collisions are expected for templated families and are structural, not leakage",
+    "clean": true
+  }
+}

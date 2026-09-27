@@ -1,0 +1,262 @@
+{
+  "corpus": {
+    "splits": {
+      "train": 1261,
+      "validation": 262,
+      "test": 213
+    },
+    "train_examples_used_for_fitting": 1261,
+    "examples_evaluated": 1736,
+    "total_bytes": 1203566
+  },
+  "fit_policy": "BPE merges fitted on the train split only; coverage measured on all splits",
+  "bpe": {
+    "target_vocab_size": 32004,
+    "achieved_vocab_size": 3543,
+    "artifact": "data/bpe_tokenizer.json",
+    "special_token_ids": {
+      "<pad>": 0,
+      "<bos>": 1,
+      "<eos>": 2,
+      "<unk>": 3
+    },
+    "min_frequency": 1
+  },
+  "byte_level_all_splits": {
+    "label": "byte-level (shipped)",
+    "vocab_size": 32004,
+    "reachable_ids": 96,
+    "reachable_pct": 0.3,
+    "dead_vocabulary_slots": 31908,
+    "dead_pct": 99.7,
+    "n_examples": 1736,
+    "total_tokens": 1203566,
+    "total_bytes": 1203566,
+    "bytes_per_token": 1.0,
+    "random_floor_nats_per_token": 4.564348,
+    "unigram_nats_per_token": 3.317545,
+    "bigram_nats_per_token": 2.534867,
+    "unigram_bits_per_byte": 4.786205,
+    "bigram_bits_per_byte": 3.657041,
+    "token_length_percentiles": {
+      "min": 141.0,
+      "p50": 717.0,
+      "p90": 1071.0,
+      "p99": 1563.0,
+      "max": 1592.0,
+      "mean": 693.2983870967741
+    }
+  },
+  "bpe_all_splits": {
+    "label": "BPE (target 32004)",
+    "vocab_size": 32004,
+    "reachable_ids": 2384,
+    "reachable_pct": 7.4491,
+    "dead_vocabulary_slots": 29620,
+    "dead_pct": 92.5509,
+    "n_examples": 1736,
+    "total_tokens": 326459,
+    "total_bytes": 1203566,
+    "bytes_per_token": 3.6867,
+    "random_floor_nats_per_token": 7.776535,
+    "unigram_nats_per_token": 6.187432,
+    "bigram_nats_per_token": 2.06894,
+    "unigram_bits_per_byte": 2.421273,
+    "bigram_bits_per_byte": 0.80962,
+    "token_length_percentiles": {
+      "min": 48.0,
+      "p50": 170.0,
+      "p90": 324.0,
+      "p99": 468.0,
+      "max": 478.0,
+      "mean": 188.05241935483872
+    }
+  },
+  "byte_level_held_out": {
+    "label": "byte (held-out)",
+    "vocab_size": 32004,
+    "reachable_ids": 90,
+    "reachable_pct": 0.2812,
+    "dead_vocabulary_slots": 31914,
+    "dead_pct": 99.7188,
+    "n_examples": 475,
+    "total_tokens": 339723,
+    "total_bytes": 339723,
+    "bytes_per_token": 1.0,
+    "random_floor_nats_per_token": 4.49981,
+    "unigram_nats_per_token": 3.24911,
+    "bigram_nats_per_token": 2.436728,
+    "unigram_bits_per_byte": 4.687475,
+    "bigram_bits_per_byte": 3.515455,
+    "token_length_percentiles": {
+      "min": 230.0,
+      "p50": 811.0,
+      "p90": 1101.0,
+      "p99": 1420.0,
+      "max": 1431.0,
+      "mean": 715.2063157894737
+    }
+  },
+  "bpe_held_out": {
+    "label": "BPE (held-out)",
+    "vocab_size": 32004,
+    "reachable_ids": 1077,
+    "reachable_pct": 3.3652,
+    "dead_vocabulary_slots": 30927,
+    "dead_pct": 96.6348,
+    "n_examples": 475,
+    "total_tokens": 110813,
+    "total_bytes": 339723,
+    "bytes_per_token": 3.0657,
+    "random_floor_nats_per_token": 6.981935,
+    "unigram_nats_per_token": 5.911961,
+    "bigram_nats_per_token": 1.600015,
+    "unigram_bits_per_byte": 2.782094,
+    "bigram_bits_per_byte": 0.752947,
+    "token_length_percentiles": {
+      "min": 92.0,
+      "p50": 231.0,
+      "p90": 390.0,
+      "p99": 474.0,
+      "max": 478.0,
+      "mean": 233.29052631578946
+    }
+  },
+  "per_split": {
+    "train": {
+      "n_examples": 1261,
+      "byte": {
+        "reachable_ids": 95,
+        "total_tokens": 863843,
+        "unigram_bits_per_byte": 4.81787,
+        "bigram_bits_per_byte": 3.647811,
+        "token_length_percentiles": {
+          "min": 141.0,
+          "p50": 713.0,
+          "p90": 1067.0,
+          "p99": 1570.0,
+          "max": 1592.0,
+          "mean": 685.0459952418715
+        }
+      },
+      "bpe": {
+        "reachable_ids": 2017,
+        "total_tokens": 215646,
+        "unigram_bits_per_byte": 2.161439,
+        "bigram_bits_per_byte": 0.700918,
+        "token_length_percentiles": {
+          "min": 48.0,
+          "p50": 164.0,
+          "p90": 287.0,
+          "p99": 409.0,
+          "max": 415.0,
+          "mean": 171.01189532117368
+        }
+      }
+    },
+    "validation": {
+      "n_examples": 262,
+      "byte": {
+        "reachable_ids": 80,
+        "total_tokens": 176879,
+        "unigram_bits_per_byte": 4.591803,
+        "bigram_bits_per_byte": 3.388322,
+        "token_length_percentiles": {
+          "min": 238.0,
+          "p50": 569.0,
+          "p90": 1014.0,
+          "p99": 1030.0,
+          "max": 1034.0,
+          "mean": 675.1106870229007
+        }
+      },
+      "bpe": {
+        "reachable_ids": 686,
+        "total_tokens": 54728,
+        "unigram_bits_per_byte": 2.539792,
+        "bigram_bits_per_byte": 0.573612,
+        "token_length_percentiles": {
+          "min": 92.0,
+          "p50": 168.0,
+          "p90": 324.0,
+          "p99": 328.0,
+          "max": 330.0,
+          "mean": 208.8854961832061
+        }
+      }
+    },
+    "test": {
+      "n_examples": 213,
+      "byte": {
+        "reachable_ids": 87,
+        "total_tokens": 162844,
+        "unigram_bits_per_byte": 4.755452,
+        "bigram_bits_per_byte": 3.469514,
+        "token_length_percentiles": {
+          "min": 230.0,
+          "p50": 848.0,
+          "p90": 1385.0,
+          "p99": 1423.0,
+          "max": 1431.0,
+          "mean": 764.5258215962441
+        }
+      },
+      "bpe": {
+        "reachable_ids": 802,
+        "total_tokens": 56085,
+        "unigram_bits_per_byte": 2.839631,
+        "bigram_bits_per_byte": 0.6619,
+        "token_length_percentiles": {
+          "min": 94.0,
+          "p50": 268.0,
+          "p90": 467.0,
+          "p99": 475.0,
+          "max": 478.0,
+          "mean": 263.3098591549296
+        }
+      }
+    }
+  },
+  "comparison": {
+    "reachable_ids_before": 96,
+    "reachable_ids_after": 2384,
+    "reachable_gain": 2288,
+    "reachable_pct_before": 0.3,
+    "reachable_pct_after": 7.4491,
+    "dead_slots_before": 31908,
+    "dead_slots_after": 29620,
+    "floor_nats_before": 4.564348,
+    "floor_nats_after": 7.776535,
+    "tokens_before": 1203566,
+    "tokens_after": 326459,
+    "token_compression": 3.6867,
+    "bytes_per_token_before": 1.0,
+    "bytes_per_token_after": 3.6867,
+    "unigram_bits_per_byte_before": 4.786205,
+    "unigram_bits_per_byte_after": 2.421273,
+    "unigram_bpb_delta_pct": -49.4114,
+    "bigram_bits_per_byte_before": 3.657041,
+    "bigram_bits_per_byte_after": 0.80962,
+    "held_out_unigram_bpb_before": 4.687475,
+    "held_out_unigram_bpb_after": 2.782094
+  },
+  "seq_len_fit": {
+    "note": "examples whose token length fits entirely inside a window",
+    "byte_level": {
+      "128": 0,
+      "256": 97,
+      "512": 591,
+      "1024": 1449,
+      "2048": 1736,
+      "4096": 1736
+    },
+    "bpe": {
+      "128": 586,
+      "256": 1338,
+      "512": 1736,
+      "1024": 1736,
+      "2048": 1736,
+      "4096": 1736
+    }
+  }
+}
