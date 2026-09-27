@@ -1,0 +1,14 @@
+{
+  "name": "forge-smoke early-stop (190 steps, best @ 160)",
+  "maxSteps": 200,
+  "floor": 10.373616,
+  "initialLoss": 10.384813,
+  "finalLoss": 1.878662,
+  "bestValLoss": 2.191725,
+  "bestValStep": 160,
+  "testLoss": 2.363311,
+  "stoppedEarly": true,
+  "notes": "Real CPU run: 143 train / 33 validation / 25 held-out test examples. Train loss 10.3848 -> 1.8787 (delta -8.5062), crossing the ln(32004)=10.3736 random-guess floor at step 2. Early stopping fired at step 190 (patience 3); the saved weights are the best-on-validation snapshot from step 160 with val loss 2.1917. Held-out test loss 2.3633, never consulted for stopping. The previous 5-example run for comparison: train 0.0057 vs val 7.6685 (overfit); this run's val loss falls from 6.94 to 2.19.",
+  "train": [{"step":1,"loss":10.3848},{"step":6,"loss":8.8003},{"step":11,"loss":6.9921},{"step":16,"loss":4.3061},{"step":21,"loss":3.1051},{"step":26,"loss":3.4533},{"step":31,"loss":3.1975},{"step":36,"loss":2.8171},{"step":41,"loss":2.6421},{"step":46,"loss":2.5138},{"step":51,"loss":2.8947},{"step":56,"loss":2.5037},{"step":61,"loss":2.3228},{"step":66,"loss":2.3201},{"step":71,"loss":2.4051},{"step":76,"loss":2.0189},{"step":81,"loss":2.6715},{"step":86,"loss":2.252},{"step":91,"loss":2.3067},{"step":96,"loss":2.1374},{"step":101,"loss":2.3309},{"step":106,"loss":1.967},{"step":111,"loss":2.5089},{"step":116,"loss":2.2035},{"step":121,"loss":2.3552},{"step":126,"loss":2.0712},{"step":131,"loss":2.1602},{"step":136,"loss":1.9597},{"step":141,"loss":1.9102},{"step":146,"loss":1.9028},{"step":151,"loss":1.9601},{"step":156,"loss":2.2794},{"step":161,"loss":1.7889},{"step":166,"loss":2.0422},{"step":171,"loss":2.0067},{"step":176,"loss":2.1046},{"step":181,"loss":1.9953},{"step":186,"loss":2.0669},{"step":190,"loss":1.8787}],
+  "validation": [{"step":10,"loss":6.9362},{"step":20,"loss":3.3094},{"step":30,"loss":3.0101},{"step":40,"loss":2.7834},{"step":50,"loss":2.5354},{"step":60,"loss":2.3947},{"step":70,"loss":2.3774},{"step":80,"loss":2.2953},{"step":90,"loss":2.2823},{"step":100,"loss":2.2965},{"step":110,"loss":2.2749},{"step":120,"loss":2.2537},{"step":130,"loss":2.2302},{"step":140,"loss":2.2644},{"step":150,"loss":2.2384},{"step":160,"loss":2.1917},{"step":170,"loss":2.2298},{"step":180,"loss":2.2196},{"step":190,"loss":2.2037}]
+}

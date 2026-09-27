@@ -1,0 +1,242 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MindArchitect Studio — design system.
+
+   These token VALUES are the project's own, carried over verbatim from
+   grok-workspace/src/styles.css (@theme). The Studio should look, read and
+   measure like the original, so its palette, type stack and radii are
+   reproduced rather than re-invented.
+
+   The platform scaffold's semantic names (--color-background,
+   --color-foreground, --color-muted-foreground, --color-border, …) are aliased
+   onto those SAME values further down. That is what lets the shipped ui/*
+   primitives (Button/Input/Card/Label) inherit the brand instead of fighting
+   it — their class names are unchanged, only the colour they resolve to is.
+
+   NOTE on name collisions: Tailwind v4 resolves `bg-*`/`text-*` utilities from
+   the --color-* namespace, so `--color-muted` (a background) and
+   `--color-muted-foreground` (text) are BOTH required — `text-muted` means the
+   palette's muted grey and `text-muted-foreground` means the aliased
+   foreground-safe variant. Both are defined; nothing is dropped.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Studio palette — verbatim from the project's @theme block. */
+  --color-bg: #06070a;
+  --color-surface: #0e1016;
+  --color-lift: #151821;
+  --color-inset: #0a0c11;
+  --color-fg: #f2f5fa;
+  --color-muted: #8b93a3;
+  --color-subtle: #5c6473;
+  --color-chrome: #d8dee8;
+  --color-signal: #7ec8e3;
+  --color-ok: #6bcb9a;
+  --color-warn: #d4b46a;
+  --color-danger: #e06c75;
+  --color-line: rgb(242 245 250 / 0.1);
+  --color-line-strong: rgb(242 245 250 / 0.18);
+
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Scaffold aliases — the shipped ui/* primitives read these names. Mapping
+     them onto the Studio palette is what makes the brand, not the template,
+     decide how a Button looks. */
+  --color-background: #06070a;
+  --color-foreground: #f2f5fa;
+  --color-card: #0e1016;
+  --color-card-foreground: #f2f5fa;
+  --color-popover: #0e1016;
+  --color-popover-foreground: #f2f5fa;
+  --color-primary: #d8dee8;
+  --color-primary-foreground: #06070a;
+  --color-secondary: #151821;
+  --color-secondary-foreground: #f2f5fa;
+  --color-muted-foreground: #8b93a3;
+  --color-accent: #151821;
+  --color-accent-foreground: #f2f5fa;
+  --color-destructive: #e06c75;
+  --color-destructive-foreground: #06070a;
+  --color-success: #6bcb9a;
+  --color-warning: #d4b46a;
+  --color-border: rgb(242 245 250 / 0.1);
+  --color-input: rgb(242 245 250 / 0.18);
+  --color-ring: #7ec8e3;
+  --color-editor-bg: #0a0c11;
+  --color-editor-fg: #f2f5fa;
+  --color-editor-gutter: #151821;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:not(:disabled):active {
+    transform: translateY(1px);
+  }
+
+  textarea,
+  input,
+  select {
+    font-family: inherit;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgb(126 200 227 / 0.28);
+    color: var(--color-fg);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(242 245 250 / 0.12) transparent;
+  }
+}
+
+@keyframes ma-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ma-scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes ma-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ma-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.ma-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(216 222 232 / 0.08), transparent);
+  animation: ma-scan 1.6s linear infinite;
+}
+
+.ma-rise {
+  animation: ma-rise 220ms ease-out both;
+}
+
+.ma-pulse {
+  animation: ma-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ma-shimmer::after,
+  .ma-animate,
+  .ma-rise,
+  .ma-pulse {
+    animation: none !important;
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:not(:disabled):active {
+    transform: none;
+  }
+}
+
+/* Numerics that line up. Declared with @utility (not a plain class) so it can
+   also be used with @apply — Tailwind v4 cannot @apply a class defined in the
+   same components layer, and doing so fails the whole CSS build. */
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-lg border border-line bg-surface;
+  }
+  .panel-header {
+    @apply flex items-center justify-between gap-2 border-b border-line px-4 py-3;
+  }
+  .panel-title {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-subtle;
+  }
+  .metric-value {
+    @apply tabular font-display text-xl font-medium tracking-tight;
+  }
+  .metric-label {
+    @apply text-[10px] uppercase tracking-[0.14em] text-subtle;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background-color: var(--color-line-strong);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
