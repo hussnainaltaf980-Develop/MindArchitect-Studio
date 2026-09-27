@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  # 1. TimescaleDB (PostgreSQL 16)
+  postgres-timescale:
+    image: timescale/timescaledb:latest-pg16
+    container_name: mindarchitect-db
+    environment:
+      POSTGRES_USER: mindarchitect
+      POSTGRES_PASSWORD: secret_change_in_production
+      POSTGRES_DB: mindarchitect_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../apps/mindarchitect-api/migrations:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  # 2. Redis Cluster / Ephemeral Cache
+  redis:
+    image: redis:7-alpine
+    container_name: mindarchitect-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # 3. Qdrant Vector Engine
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: mindarchitect-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+  # 4. vLLM Real-Time GPU Serving (NVIDIA RTX A6000)
+  vllm-inference:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.gpu
+    container_name: mindarchitect-vllm
+    command: ["serve"]
+    ports:
+      - "8000:8000"
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - CHECKPOINT_DIR=/models/checkpoints/forge_v5_6
+    volumes:
+      - ../models:/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  # 5. MindArchitect Real-Time API Gateway
+  api-gateway:
+    build:
+      context: ..
+      dockerfile: apps/mindarchitect-api/Dockerfile
+    container_name: mindarchitect-api
+    ports:
+      - "8080:8000"
+    environment:
+      - DATABASE_URL=postgresql://mindarchitect:secret_change_in_production@postgres-timescale:5432/mindarchitect_db
+      - REDIS_URL=redis://redis:6379/0
+      - VLLM_BASE_URL=http://vllm-inference:8000/v1
+    depends_on:
+      - postgres-timescale
+      - redis
+      - vllm-inference
+    restart: unless-stopped
+
+  # 6. Studio UI (Next.js 14/15)
+  studio-ui:
+    build:
+      context: ../apps/mindarchitect-ui
+      dockerfile: Dockerfile
+    container_name: mindarchitect-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+    depends_on:
+      - api-gateway
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  qdrant_storage:
