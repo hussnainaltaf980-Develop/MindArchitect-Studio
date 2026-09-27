@@ -1,0 +1,42 @@
+# ── dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ── build output ──────────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+
+# ── environment / secrets ─────────────────────────────────────────────────────
+# The real .env is NEVER committed. Ship .env.example instead.
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# ── logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+.webapp-logs/
+
+# ── editor / OS ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ── python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# ── local scratch ─────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+tmp/
+prompt

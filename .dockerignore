@@ -1,0 +1,10 @@
+# Build-context excludes for the webapp-variant sandbox image (M4): the image
+# COPYs this template tree to /opt/webapp-template and warms the pnpm store from
+# package.json + pnpm-lock.yaml, so installed deps and build output are noise.
+node_modules
+dist
+.git
+.env
+.env.*
+.webapp-logs
+*.log

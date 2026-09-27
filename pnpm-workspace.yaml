@@ -1,0 +1,5 @@
+# pnpm 10+ blocks dependency build scripts by default; esbuild needs its build
+# step (its native binary, used by Vite/@tailwindcss). Explicitly allow it.
+# (pnpm 11 moved this out of package.json's "pnpm" field into this file.)
+allowBuilds:
+  esbuild: true
